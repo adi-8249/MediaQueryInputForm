@@ -24,10 +24,19 @@ const telError = document.querySelector('.tel-error');
 tel.addEventListener('input', function () 
 {
     let telRegex = RegExp('^[0-9]{2}[ ][0-9]{10}$');
-    //Checking number is valid or not using if else condition
     if (telRegex.test(tel.value)) 
         telError.textContent = "";
     else 
         telError.textContent = "telephone number is not Valid";
     
+});
+//UC4:-Validating password must be min 8 charecter
+const pwd = document.querySelector('#pwd');
+const passworderror = document.querySelector('.pwd-error');
+pwd.addEventListener('input', function () {
+    let passwordpattern = RegExp('^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$');
+    if (passwordpattern.test(pwd.value))
+        passworderror.textContent = ' ';
+    else
+        passworderror.textContent = 'Password is Incorrect!';
 });
