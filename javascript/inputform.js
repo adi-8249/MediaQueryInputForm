@@ -30,13 +30,20 @@ tel.addEventListener('input', function ()
         telError.textContent = "telephone number is not Valid";
     
 });
-//UC4:-Validating password must be min 8 charecter
+//UC4:- in both password must 8 char properties
+//UC5:-Rule1:-Password Minimum 8 Character,Password Rule2:-atleast one upper case, Rule3:-atleast one numeric Password, Rule4:-atleast one Special character 
 const pwd = document.querySelector('#pwd');
 const passworderror = document.querySelector('.pwd-error');
 pwd.addEventListener('input', function () {
-    let passwordpattern = RegExp('^[a-zA-Z0-9-+_!@#$%^&*.,?]{8,}$');
+    let passwordpattern = RegExp('^(?=.*[A-Z])(?=.*[0-9])(?=.*[-+_!@#$%^&*.,?{}()<>])[A-Za-z0-9-+_!@#$%^&*.,?]{8,}$');
     if (passwordpattern.test(pwd.value))
         passworderror.textContent = ' ';
     else
         passworderror.textContent = 'Password is Incorrect!';
+});
+const salary = document.querySelector('#salary');
+const output = document.querySelector('.salary-output');
+output.textContent = salary.value;
+salary.addEventListener('input', function () {
+    output.textContent = salary.value;
 });
